@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>MapReduce with javascript sample client</title>
+ </head>
+
+<script type="text/js-worker">
+var data = "";
+var result ="";
+onmessage = function(event) {
+  var id = event.data;
+  var xmlhttp;
+  xmlhttp=new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+     data = xmlhttp.responseText;
+     if(data.length>1){
+        result = map(data);
+        sendResult();
+        postMessage(result);
+      }
+     else
+	  postMessage("wait");
+    }
+  }
+  xmlhttp.open("POST","http://localhost:1337/register",true);
+  xmlhttp.send(id);
+
+};
+
+function sendResult(){
+var xmlhttp=new XMLHttpRequest();
+ 
+  xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+	
+    }
+  }
+  xmlhttp.open("POST","http://localhost:1337/result",true);
+  xmlhttp.send(result);
+}
+
+function map(value){
+  return value.length;
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+var id = "001"; //ID of the client, will use hash of the IP or MAC address for real application
+var TIMEOUT = 3000; // If no available work from server, retry after 3000ms
+
+ onload = function() { 
+   getWork();
+} 
+
+function getWork(){
+ var parts = [];
+  Array.prototype.forEach.call(
+    document.querySelectorAll("script[type=\"text\/js-worker\"]"),
+    function (oScript) {
+      parts[parts.length] = oScript.textContent;
+    }
+  );
+  var blob = new Blob(parts);
+
+  var worker = new Worker(window.URL.createObjectURL(blob));
+  worker.onmessage = function (oEvent) {
+ 
+  document.getElementById('result').textContent = event.data;
+  
+    if(event.data!="wait"){
+       getWork();
+    }
+    else{  
+       setTimeout(getWork,TIMEOUT);
+    }
+  };
+  
+  worker.postMessage(id);
+
+}
+</script>
+
+ <body>
+  <p>Result: <output id="result"></output></p>
+ </body>
+</html>
