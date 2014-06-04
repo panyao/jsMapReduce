@@ -1,0 +1,237 @@
+/******************************************************************
+	Standard HTML Elements
+*******************************************************************/
+body{	
+	padding:0;
+	margin:-1px 0 0 0;
+	background: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.16, rgb(16,71,133)),
+	    color-stop(0.61, rgb(36,122,214)),
+	    color-stop(0.81, rgb(47,144,255))
+	) !important;
+	background: -moz-linear-gradient(
+	    center bottom,
+	    rgb(16,71,133) 16%,
+	    rgb(36,122,214) 61%,
+	    rgb(47,144,255) 81%
+	) !important;
+	position:relative;
+	z-index:-100;
+}
+
+ul{
+	margin:0px 0 20px 25px;
+	padding:0;
+}
+ul li{
+	font-weight:light;
+	font-size:17px;
+	color:white;	
+
+}
+
+
+h1,h2{
+	font-family:'Lobster';		
+	color:white;	
+}
+h1{
+	
+	font-size:45px;
+	margin:0 0 0 20px;
+}
+
+h2{
+	font-size:22px;
+	color:white;
+	letter-spacing: 0px;
+	margin:20px 0 5px 0;
+}
+h3{
+	font-family: Arial;
+	font-weight:bold;
+	font-size:14px;	
+	color:white;	
+	margin:20px 0 5px 0;
+}
+div{
+	font-size:14px;	
+	font-family:'Arial';	
+}
+
+
+
+
+
+/******************************************************************
+ 	GWT Elements
+*******************************************************************/
+.gwt-HTML{
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************
+	Custom Elements	
+*******************************************************************/
+.navigationBackground{
+	width:100%;	
+	height:30px;
+	background:rgb(16,71,133);
+	position:fixed;
+	padding:5px;	
+	top:0;
+	left:0;
+	z-index:200;
+	filter:alpha(opacity=85);
+	-moz-opacity:0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
+	
+}
+.navigationForeground{
+	position:fixed;
+	top:0;
+}
+.navigationForeground a{	
+	display:block;
+	font-family:"Lobster";	
+	font-size:18px;
+	padding:5px;
+	font-weight:light;
+	text-decoration:none;
+	color:white;	
+	margin:0 0 0 30px;
+	text-transform: uppercase;
+}
+.navigationForeground a:visited{
+	color:white;
+}
+
+.navigationForeground a:hover{
+	color:rgb(47,144,255);
+}
+
+
+
+
+.retryButton{
+	margin:0 0 0 40px;
+	font-family:'Lobster';
+	font-size:30px;
+	height:90px;
+	width:180px;
+	color:#2f91ff;	
+}
+
+
+
+
+
+.mainPanel{
+	margin:30px auto;
+	padding:30px;
+	width:960;
+	background:none;
+}
+
+
+
+
+
+
+.headerPanel{
+	width:900px;
+	margin-bottom:-20px;
+	background:none;
+	position:relative;
+	z-index:100;
+}
+
+
+
+
+
+
+
+.contentPanel{
+	
+	width:100%;
+	padding:30px;
+	color:white;	
+	/*-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 1px 1px 1px #444;  
+    -webkit-box-shadow: 1px 1px 1px #444;*/	
+}
+.contentBoxPanel{
+	width:360px;
+	margin:30px 30px 30px 0;	
+}
+
+
+
+
+
+
+
+.performancePanelBox{
+	width:180px;
+	border:1px solid #2f91ff;
+	margin:0 40px 0 0px;	
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+}
+.performancePanelBox h3{
+	font-size:14px;
+	width:100%;
+	text-align:center;
+	
+	padding:5px 0 5px 0;
+	margin:0;
+	color:white;
+	background-color:#2f91ff;
+}
+
+.performancePanelBox .gwt-HTML{
+	font-size:12px;
+	text-align:center;
+	padding:0 0 10px 0;	
+}
+
+
+
+
+.highscorePanel{
+	margin-right:30px;
+}
+
+.highscoreTable {
+	color:white;
+}
+.highscoreTable tr{
+	text-align:center;
+	padding:5px;
+}
+
+
+
+.clientDetailsPanel table{
+	color:white;
+	margin:0 40px 0 0;
+}
+.clientDetailsPanel table tr{	
+}
